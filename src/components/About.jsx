@@ -130,7 +130,7 @@ const About = () => {
                             </svg>
                         </div>
                         <motion.a
-                            href="/resume.pdf"
+                            href="/Sandeep_A_M_FrontEnd_Developer_CV.pdf"
                             download
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
