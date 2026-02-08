@@ -3,7 +3,7 @@ import { summary } from '../data/skills';
 
 const Hero = () => {
     return (
-        <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-16 relative overflow-hidden">
+        <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-20 md:pt-16 relative overflow-hidden">
             {/* Animated Mesh Background */}
             <div className="absolute inset-0 bg-mesh"></div>
 
@@ -13,7 +13,7 @@ const Hero = () => {
             <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
 
             <div className="max-w-7xl w-full relative z-10">
-                <div className="flex flex-col items-center text-center space-y-8">
+                <div className="flex flex-col items-center text-center space-y-6 md:space-y-8">
                     {/* Greeting */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -21,7 +21,7 @@ const Hero = () => {
                         transition={{ duration: 0.5 }}
                         className="inline-block"
                     >
-                        <span className="px-6 py-2 glass rounded-full text-sm font-medium text-gradient-primary">
+                        <span className="px-4 py-2 md:px-6 md:py-2 glass rounded-full text-xs md:text-sm font-medium text-gradient-primary">
                             👋 Hi, I'm
                         </span>
                     </motion.div>
