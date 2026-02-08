@@ -13,7 +13,7 @@ const Hero = () => {
                     </h1>
 
                     <h2 className="text-3xl md:text-4xl font-bold text-slate-200">
-                        Full Stack Developer
+                        Front End Developer
                     </h2>
 
                     <div className="flex flex-wrap gap-2 text-sm text-slate-400">

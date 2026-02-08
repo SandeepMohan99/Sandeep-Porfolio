@@ -24,6 +24,6 @@ export const skills = {
     ]
 };
 
-export const mainSummary = "I am a Full Stack Developer with hands-on experience building scalable, responsive, and production-ready applications using React.js, Next.js, TypeScript, Tailwind CSS, Node.js, Express.js, REST APIs, and MongoDB. I work across the entire development lifecycle — from designing UI components and integrating APIs to building backend logic, managing databases, and optimizing performance. Passionate about creating seamless user experiences backed by clean code, reusability, strong architecture, and modern engineering best practices.";
+export const mainSummary = "I am a Front End Developer with hands-on experience building scalable, responsive, and production-ready applications using React.js, Next.js, TypeScript, Tailwind CSS, Node.js, Express.js, REST APIs, and MongoDB. I work across the entire development lifecycle — from designing UI components and integrating APIs to building backend logic, managing databases, and optimizing performance. Passionate about creating seamless user experiences backed by clean code, reusability, strong architecture, and modern engineering best practices.";
 
 export const summary = " A well passionate engineer seeking a career where I can utilize my knowledge an technical skills to the best of my ability, with a strong desire to learn in order to lead an organization to greater heights"

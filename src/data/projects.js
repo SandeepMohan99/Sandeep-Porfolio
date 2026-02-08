@@ -34,7 +34,7 @@ export const projects = [
     {
         id: 3,
         title: 'CARSINE',
-        subtitle: 'Car Detailing Booking Platform (Full Stack)',
+        subtitle: 'Car Detailing Booking Platform (Front End)',
         description: 'Developed full booking flow with backend APIs and frontend UI. Handled user appointments, service management, and database operations.',
         tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
         features: [
@@ -53,7 +53,7 @@ export const projects = [
     {
         id: 4,
         title: 'Hungry Eats',
-        subtitle: 'Digital Restaurant Ordering System (Full Stack)',
+        subtitle: 'Digital Restaurant Ordering System (Front End)',
         description: 'Built digital menu ordering, table reservation & checkout workflow. Developed admin interface for kitchen to manage incoming orders.',
         tech: ['React.js', 'Node.js', 'JSON Server'],
         features: [

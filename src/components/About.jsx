@@ -21,7 +21,7 @@ const About = () => {
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div className="space-y-6">
                         <div className="bg-slate-900 rounded-2xl p-6 border border-slate-700">
-                            <h3 className="text-2xl font-bold mb-4 text-gradient">Full Stack Developer</h3>
+                            <h3 className="text-2xl font-bold mb-4 text-gradient">Front End Developer</h3>
                             <p className="text-slate-300 text-lg leading-relaxed">
                                 {mainSummary}
                             </p>

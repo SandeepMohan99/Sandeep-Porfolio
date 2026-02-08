@@ -1,7 +1,7 @@
 export const experiences = [
     {
         id: 1,
-        role: 'Full Stack Developer',
+        role: 'Front End Developer',
         company: 'StratAgile',
         period: 'March 2024 – Present',
         location: 'Remote',
