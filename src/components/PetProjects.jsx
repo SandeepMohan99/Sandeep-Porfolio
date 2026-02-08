@@ -1,77 +1,126 @@
+import { motion } from 'framer-motion';
 import { petProjects, petProjectsDescription } from '../data/petProjects';
 
 const PetProjects = () => {
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    const cardVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0 }
+    };
+
     return (
-        <section id="pet-projects" className="py-20 px-4 bg-slate-800/50">
-            <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4">
-                        Personal <span className="text-gradient">Projects</span>
+        <section id="pet-projects" className="section-padding bg-dark-800/50 relative overflow-hidden">
+            {/* Background Decoration */}
+            <div className="absolute top-1/4 right-0 w-96 h-96 bg-success/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+
+            <div className="container-custom relative z-10">
+                {/* Section Header */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="text-center mb-16"
+                >
+                    <h2 className="text-5xl md:text-6xl font-bold font-heading mb-4">
+                        Pet <span className="text-gradient">Projects</span>
                     </h2>
-                    <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
+                    <div className="w-24 h-1.5 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full mb-6"></div>
                     <p className="text-slate-400 text-lg max-w-3xl mx-auto">
                         {petProjectsDescription}
                     </p>
-                </div>
+                </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {petProjects.map((project) => (
-                        <div
+                {/* Projects Grid */}
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
+                    {petProjects.map((project, index) => (
+                        <motion.div
                             key={project.id}
-                            className="bg-slate-900 rounded-2xl overflow-hidden border border-slate-700 hover:border-primary transition-all group"
+                            variants={cardVariants}
+                            whileHover={{ y: -10 }}
+                            className="card-modern group"
                         >
-                            <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative overflow-hidden">
-                                <div className="absolute inset-0 bg-slate-900/50 group-hover:bg-slate-900/30 transition-all"></div>
-                                <div className="relative z-10 text-5xl font-bold text-primary/50">
-                                    {project.title.charAt(0)}
+                            {/* Project Icon/Image */}
+                            <div className="relative h-40 bg-gradient-to-br from-accent/20 to-success/20 rounded-xl mb-4 overflow-hidden flex items-center justify-center">
+                                <div className="text-5xl opacity-60">
+                                    {index === 0 ? '🛒' : index === 1 ? '🎬' : index === 2 ? '🎥' : index === 3 ? '🌤️' : '✈️'}
                                 </div>
                             </div>
 
-                            <div className="p-6 space-y-4">
-                                <div>
-                                    <h3 className="text-xl font-bold text-white mb-1">{project.title}</h3>
-                                    <p className="text-primary font-semibold text-sm">{project.subtitle}</p>
-                                </div>
+                            {/* Title */}
+                            <h3 className="text-xl font-bold text-gradient-primary mb-2 group-hover:scale-105 transition-transform origin-left">
+                                {project.title}
+                            </h3>
+                            <p className="text-sm text-gradient-secondary mb-3">{project.subtitle}</p>
 
-                                <p className="text-slate-300 text-sm leading-relaxed">{project.description}</p>
+                            {/* Description */}
+                            <p className="text-slate-400 text-sm mb-4 leading-relaxed">
+                                {project.description}
+                            </p>
 
-                                <div className="flex flex-wrap gap-2">
-                                    {project.tech.map((tech) => (
-                                        <span
-                                            key={tech}
-                                            className="px-2 py-1 bg-slate-800 text-slate-300 rounded-full text-xs font-medium border border-slate-700"
-                                        >
-                                            {tech}
-                                        </span>
-                                    ))}
-                                </div>
-
-                                <div className="flex gap-3 pt-2">
-                                    {project.liveUrl && (
-                                        <a
-                                            href={project.liveUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex-1 px-4 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg font-semibold text-center text-sm transition-all hover:scale-105"
-                                        >
-                                            Live Demo
-                                        </a>
-                                    )}
-                                    {project.githubUrl && (
-                                        <a
-                                            href={project.githubUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex-1 px-4 py-2 border-2 border-slate-700 hover:border-primary text-white rounded-lg font-semibold text-center text-sm transition-all hover:scale-105"
-                                        >
-                                            GitHub
-                                        </a>
-                                    )}
-                                </div>
+                            {/* Tech Stack */}
+                            <div className="flex flex-wrap gap-2 mb-4">
+                                {project.tech.slice(0, 3).map((tech) => (
+                                    <span
+                                        key={tech}
+                                        className="px-2 py-1 glass rounded-lg text-xs font-medium text-white"
+                                    >
+                                        {tech}
+                                    </span>
+                                ))}
+                                {project.tech.length > 3 && (
+                                    <span className="px-2 py-1 glass rounded-lg text-xs font-medium text-slate-400">
+                                        +{project.tech.length - 3}
+                                    </span>
+                                )}
                             </div>
-                        </div>
+
+                            {/* Links */}
+                            <div className="flex gap-3 pt-4 border-t border-white/10">
+                                {project.liveUrl && (
+                                    <motion.a
+                                        href={project.liveUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        className="flex-1 px-3 py-2 bg-gradient-accent text-white rounded-lg text-xs font-semibold text-center transition-all"
+                                    >
+                                        Live Demo
+                                    </motion.a>
+                                )}
+                                {project.githubUrl && (
+                                    <motion.a
+                                        href={project.githubUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        className="flex-1 px-3 py-2 glass text-white rounded-lg text-xs font-semibold text-center hover:bg-white/15 transition-all"
+                                    >
+                                        GitHub
+                                    </motion.a>
+                                )}
+                            </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );
