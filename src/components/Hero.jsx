@@ -5,8 +5,8 @@ const Hero = () => {
         <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-16 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 pointer-events-none"></div>
 
-            <div className="max-w-7xl w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
-                <div className="space-y-6 animate-fade-in">
+            <div className="max-w-7xl w-full flex justify-center relative z-10">
+                <div className="space-y-6 animate-fade-in max-w-3xl">
                     <p className="text-primary text-lg font-semibold">Hi, I'm</p>
                     <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-heading">
                         <span className="text-gradient">Sandeep A M</span>
@@ -68,19 +68,6 @@ const Hero = () => {
                                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                             </svg>
                         </a>
-                    </div>
-                </div>
-
-                <div className="flex justify-center items-center">
-                    <div className="relative w-80 h-80 md:w-96 md:h-96 animate-float">
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-full opacity-20 blur-3xl"></div>
-                        <div className="relative w-full h-full rounded-full bg-gradient-to-br from-primary to-secondary p-1">
-                            <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
-                                <div className="w-11/12 h-11/12 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-8xl font-bold text-primary">
-                                    S
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
