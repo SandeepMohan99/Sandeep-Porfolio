@@ -87,23 +87,23 @@ const Contact = () => {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-5xl md:text-6xl font-bold font-heading mb-4">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-heading mb-4">
                         Get In <span className="text-gradient">Touch</span>
                     </h2>
                     <div className="w-24 h-1.5 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full mb-4"></div>
-                    <p className="text-slate-400 text-lg">
+                    <p className="text-slate-400 text-sm md:text-base lg:text-lg">
                         Have a project in mind? Let's work together!
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
                     {/* Contact Info */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
-                        className="space-y-8"
+                        className="space-y-6 md:space-y-8"
                     >
                         {/* Contact Cards */}
                         {contactInfo.map((info, index) => (
@@ -116,19 +116,19 @@ const Contact = () => {
                                 whileHover={{ x: 5 }}
                                 className="card-modern flex items-start gap-4"
                             >
-                                <div className={`w-14 h-14 bg-gradient-to-r ${info.gradient} rounded-xl flex items-center justify-center flex-shrink-0`}>
-                                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className={`w-12 h-12 md:w-14 md:h-14 bg-gradient-to-r ${info.gradient} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                                    <svg className="w-5 h-5 md:w-7 md:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         {info.icon}
                                     </svg>
                                 </div>
                                 <div>
                                     <p className="text-slate-400 text-sm mb-1">{info.label}</p>
                                     {info.href ? (
-                                        <a href={info.href} className="text-white font-semibold hover:text-primary transition-colors">
+                                        <a href={info.href} className="text-sm md:text-base text-white font-semibold hover:text-primary transition-colors break-all">
                                             {info.value}
                                         </a>
                                     ) : (
-                                        <p className="text-white font-semibold">{info.value}</p>
+                                        <p className="text-sm md:text-base text-white font-semibold">{info.value}</p>
                                     )}
                                 </div>
                             </motion.div>
@@ -136,7 +136,7 @@ const Contact = () => {
 
                         {/* Social Links */}
                         <div className="pt-6">
-                            <h3 className="text-xl font-bold mb-4 text-gradient-primary">Connect With Me</h3>
+                            <h3 className="text-lg md:text-xl font-bold mb-4 text-gradient-primary">Connect With Me</h3>
                             <div className="flex gap-4">
                                 {socialLinks.map((social, index) => (
                                     <motion.a
@@ -176,8 +176,8 @@ const Contact = () => {
                                 <label
                                     htmlFor="name"
                                     className={`absolute left-4 transition-all duration-200 ${focusedField === 'name' || formData.name
-                                            ? '-top-2 text-xs bg-dark-900 px-2 text-primary'
-                                            : 'top-4 text-slate-400'
+                                        ? '-top-2 text-xs bg-dark-900 px-2 text-primary'
+                                        : 'top-4 text-slate-400'
                                         }`}
                                 >
                                     Name
@@ -191,7 +191,7 @@ const Contact = () => {
                                     onFocus={() => setFocusedField('name')}
                                     onBlur={() => setFocusedField('')}
                                     required
-                                    className="w-full px-4 py-4 bg-dark-700/50 border border-white/10 rounded-xl text-white focus:outline-none focus:border-primary transition-all"
+                                    className="w-full px-3 py-3 md:px-4 md:py-4 bg-dark-700/50 border border-white/10 rounded-xl text-sm md:text-base text-white focus:outline-none focus:border-primary transition-all"
                                 />
                             </div>
 
@@ -200,8 +200,8 @@ const Contact = () => {
                                 <label
                                     htmlFor="email"
                                     className={`absolute left-4 transition-all duration-200 ${focusedField === 'email' || formData.email
-                                            ? '-top-2 text-xs bg-dark-900 px-2 text-primary'
-                                            : 'top-4 text-slate-400'
+                                        ? '-top-2 text-xs bg-dark-900 px-2 text-primary'
+                                        : 'top-4 text-slate-400'
                                         }`}
                                 >
                                     Email
@@ -215,7 +215,7 @@ const Contact = () => {
                                     onFocus={() => setFocusedField('email')}
                                     onBlur={() => setFocusedField('')}
                                     required
-                                    className="w-full px-4 py-4 bg-dark-700/50 border border-white/10 rounded-xl text-white focus:outline-none focus:border-primary transition-all"
+                                    className="w-full px-3 py-3 md:px-4 md:py-4 bg-dark-700/50 border border-white/10 rounded-xl text-sm md:text-base text-white focus:outline-none focus:border-primary transition-all"
                                 />
                             </div>
 
@@ -224,8 +224,8 @@ const Contact = () => {
                                 <label
                                     htmlFor="message"
                                     className={`absolute left-4 transition-all duration-200 ${focusedField === 'message' || formData.message
-                                            ? '-top-2 text-xs bg-dark-900 px-2 text-primary'
-                                            : 'top-4 text-slate-400'
+                                        ? '-top-2 text-xs bg-dark-900 px-2 text-primary'
+                                        : 'top-4 text-slate-400'
                                         }`}
                                 >
                                     Message
@@ -239,7 +239,7 @@ const Contact = () => {
                                     onBlur={() => setFocusedField('')}
                                     required
                                     rows="5"
-                                    className="w-full px-4 py-4 bg-dark-700/50 border border-white/10 rounded-xl text-white focus:outline-none focus:border-primary transition-all resize-none"
+                                    className="w-full px-3 py-3 md:px-4 md:py-4 bg-dark-700/50 border border-white/10 rounded-xl text-sm md:text-base text-white focus:outline-none focus:border-primary transition-all resize-none"
                                 ></textarea>
                             </div>
 
