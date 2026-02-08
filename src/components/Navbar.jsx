@@ -37,6 +37,35 @@ const Navbar = () => {
         { href: '#contact', label: 'Contact' }
     ];
 
+    // Handle navigation click with smooth scroll and offset
+    const handleNavClick = (e, href) => {
+        e.preventDefault();
+        const targetId = href.slice(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            // Close mobile menu first
+            setMobileMenuOpen(false);
+
+            // Use setTimeout to allow menu to close before scrolling
+            setTimeout(() => {
+                // Adjust navbar height based on screen size
+                const isMobile = window.innerWidth < 768;
+                const navbarHeight = isMobile ? 80 : 100;
+
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+
+                setActiveSection(targetId);
+            }, 300); // Wait for mobile menu animation to complete
+        }
+    };
+
     return (
         <motion.nav
             initial={{ y: -100 }}
@@ -64,12 +93,12 @@ const Navbar = () => {
                                 <li key={link.href}>
                                     <motion.a
                                         href={link.href}
+                                        onClick={(e) => handleNavClick(e, link.href)}
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
-                                        onClick={() => setActiveSection(link.href.slice(1))}
                                         className={`px-4 py-2 rounded-lg font-medium text-sm transition-all ${activeSection === link.href.slice(1)
-                                                ? 'bg-white/15 text-white'
-                                                : 'text-slate-300 hover:text-white hover:bg-white/10'
+                                            ? 'bg-white/15 text-white'
+                                            : 'text-slate-300 hover:text-white hover:bg-white/10'
                                             }`}
                                     >
                                         {link.label}
@@ -115,13 +144,10 @@ const Navbar = () => {
                                         >
                                             <a
                                                 href={link.href}
-                                                onClick={() => {
-                                                    setMobileMenuOpen(false);
-                                                    setActiveSection(link.href.slice(1));
-                                                }}
+                                                onClick={(e) => handleNavClick(e, link.href)}
                                                 className={`block py-3 px-4 rounded-lg font-medium transition-all ${activeSection === link.href.slice(1)
-                                                        ? 'bg-white/15 text-white'
-                                                        : 'text-slate-300 hover:text-white hover:bg-white/10'
+                                                    ? 'bg-white/15 text-white'
+                                                    : 'text-slate-300 hover:text-white hover:bg-white/10'
                                                     }`}
                                             >
                                                 {link.label}

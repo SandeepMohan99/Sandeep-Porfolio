@@ -6,15 +6,17 @@
   * {
     @apply box-border;
   }
-  
-  body {
-    @apply bg-dark-900 text-slate-100 overflow-x-hidden;
-    background: linear-gradient(to bottom, #0a0a0f 0%, #13131a 100%);
-  }
-  
+
   html {
     @apply scroll-smooth;
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+    /* Account for fixed navbar */
+  }
+
+  body {
+    @apply bg-dark-900 text-slate-100 overflow-x-hidden;
+    background: linear-gradient(to bottom, #0a0a0f 0%, #13131a 100%);
   }
 
   /* Custom scrollbar */
@@ -36,6 +38,7 @@
 }
 
 @layer utilities {
+
   /* Gradient Text */
   .text-gradient {
     @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
@@ -77,7 +80,7 @@
 
   /* Mesh Gradient Background */
   .bg-mesh {
-    background: 
+    background:
       radial-gradient(at 40% 20%, rgba(102, 126, 234, 0.3) 0px, transparent 50%),
       radial-gradient(at 80% 0%, rgba(79, 172, 254, 0.3) 0px, transparent 50%),
       radial-gradient(at 0% 50%, rgba(240, 147, 251, 0.3) 0px, transparent 50%),

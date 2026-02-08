@@ -3,7 +3,7 @@ import { summary } from '../data/skills';
 
 const Hero = () => {
     return (
-        <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-20 md:pt-16 relative overflow-hidden">
+        <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-28 md:pt-16 relative overflow-hidden">
             {/* Animated Mesh Background */}
             <div className="absolute inset-0 bg-mesh"></div>
 
